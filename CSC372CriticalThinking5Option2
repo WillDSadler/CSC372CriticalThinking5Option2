@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class CSC372CriticalThinking5Option2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter 5 numbers:");
+
+        int sum = recursiveSum(scanner, 5);
+        System.out.println("Sum of the 5 numbers is: " + sum);
+
+        scanner.close();
+    }
+
+    private static int recursiveSum(Scanner scanner, int count) {
+        if (count == 0) {
+            return 0;
+        } else {
+            int num = scanner.nextInt();
+            return num + recursiveSum(scanner, count - 1);
+        }
+    }
+}
